@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffron Sweets Bakery - Bangalore</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rasa:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --saffron: #FF9933;
+            --deep-red: #8B0000;
+            --gold: #FFD700;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .indian-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/indian-flower.png');
+        }
+        .menu-font {
+            font-family: 'Rasa', serif;
+        }
+    </style>
+</head>
+<body class="bg-orange-50">
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-[--saffron]">Saffron Sweets Bakery</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-[--deep-red]">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-[--deep-red]">Menu</a>
+                    <a href="#about" class="text-gray-700 hover:text-[--deep-red]">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[--deep-red]">Contact</a>
+                    <a href="#order" class="bg-[--saffron] text-white px-4 py-2 rounded-md hover:bg-[--deep-red]">Order Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-gray-700">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block text-gray-700 hover:text-[--deep-red] px-3 py-2">Home</a>
+                <a href="#menu" class="block text-gray-700 hover:text-[--deep-red] px-3 py-2">Menu</a>
+                <a href="#about" class="block text-gray-700 hover:text-[--deep-red] px-3 py-2">About</a>
+                <a href="#contact" class="block text-gray-700 hover:text-[--deep-red] px-3 py-2">Contact</a>
+                <a href="#order" class="block bg-[--saffron] text-white px-3 py-2 rounded-md hover:bg-[--deep-red]">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="relative h-[80vh] indian-pattern">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative h-full flex items-center justify-center text-center">
+            <div class="text-white px-4">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Traditional Indian Sweets & Bakery</h1>
+                <p class="text-xl mb-8">Authentic flavors of Bangalore</p>
+                <a href="#menu" class="bg-[--saffron] text-white px-8 py-3 rounded-full hover:bg-[--deep-red] transition duration-300">Explore Our Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[--deep-red]">Our Specialties</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Menu items -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://source.unsplash.com/400x300/?indian-sweets" alt="Naan Khatai" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 menu-font">Naan Khatai</h3>
+                    <p class="text-gray-600 mb-4">Traditional Indian shortbread cookies</p>
+                    <p class="text-[--deep-red] font-bold">₹200/dozen</p>
+                </div>
+            </div>
+            <!-- Add more menu items similarly -->
+        </div>
+    </div>
+
+    <div id="about" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-[--deep-red]">Our Story</h2>
+                    <p class="text-gray-700 mb-4">Founded in the heart of Bangalore, Saffron Sweets Bakery brings together traditional Indian sweets and modern baking techniques. Our recipes have been passed down through generations, ensuring authentic taste in every bite.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://source.unsplash.com/600x400/?bakery" alt="Our Bakery" class="w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12 text-[--deep-red]">Contact Us</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Visit Our Store</h3>
+                <p class="mb-2"><i class="bi bi-geo-alt"></i> 123 Brigade Road, Bangalore</p>
+                <p class="mb-2"><i class="bi bi-telephone"></i> +91 98765 43210</p>
+                <p class="mb-2"><i class="bi bi-envelope"></i> info@saffronsweets.com</p>
+            </div>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-2 border rounded">
+                <input type="email" placeholder="Your Email" class="w-full p-2 border rounded">
+                <textarea placeholder="Your Message" class="w-full p-2 border rounded h-32"></textarea>
+                <button type="submit" class="bg-[--saffron] text-white px-6 py-2 rounded hover:bg-[--deep-red]">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Saffron Sweets Bakery</h3>
+                    <p>Bringing sweetness to your celebrations</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Opening Hours</h3>
+                    <p>Monday - Saturday: 9AM - 9PM</p>
+                    <p>Sunday: 10AM - 6PM</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-[--saffron]"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="hover:text-[--saffron]"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="hover:text-[--saffron]"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
